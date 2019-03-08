@@ -1,0 +1,39 @@
+.event-box {
+    background: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+    border-radius: 5px;
+    flex: 1 0 100%;
+    max-width: 400px;
+    .event-background{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: 70px 10px;
+        background: #333;
+        color: white;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1.4em;
+        text-shadow: 0 0 2px rgba(0,0,0,0.6), 0 0 10px rgba(0,0,0,0.6);
+    }
+    .buttons-event{
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    .excerpt{
+        padding: 15px;
+    }
+}
+
+.events{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

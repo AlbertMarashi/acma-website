@@ -1,0 +1,92 @@
+html{
+    background: #f6f6f6;
+}
+
+.hero{
+    background: transparent;
+    &.dark{
+        background: #222;
+        color: white;
+    }
+    &.image{
+        background: #333;
+        color: white;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .inner-hero{
+        margin: auto;
+        max-width: $desktop;
+        width: 100%;
+        &.image{
+            background: #333;
+            color: white;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+        }
+        &.page{
+            padding: 40px;
+            background: white;
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+            font-size: 1.1em;
+            @media (max-width: $tablet) {
+                padding: 20px;
+            }
+        }
+        &.padding-none{
+            padding: 10px;
+        }
+        &.padding-tiny{
+            padding: 20px 10px;
+        }
+        &.padding-small{
+            padding: 5vh 10px;
+        }
+        &.padding-medium{
+            padding: 10vh 10px;
+        }
+        &.padding-large{
+            padding: 25vh 10px;
+        }
+    }
+    &.padding-none{
+        padding: 10px;
+    }
+    &.padding-tiny{
+        padding: 20px 10px;
+    }
+    &.padding-small{
+        padding: 5vh 10px;
+    }
+    &.padding-medium{
+        padding: 10vh 10px;
+    }
+    &.padding-large{
+        padding: 25vh 10px;
+    }
+}
+
+.title{
+    font-size: 3em;
+}
+
+.shadow{
+    text-shadow: 0 0 6px rgba(0,0,0,0.4), 0 0 2px rgba(0,0,0,0.2);
+}
+
+.featured-text{
+    font-size: 1.5em;
+    max-width: 800px;
+}
+
+.front-page-h2{
+    font-size: 2.2em;
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #a11;
+}
+

@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #09c;
+}
+
+html{
+    font-family: 'Lato', sans-serif;
+    color: #222;
+}
+
+.flex {
+    display: flex;
+    &.mobile {
+        @media (max-width: $tablet) {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.row{
+    display: flex;
+    flex-flow: row;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.end {
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.flex-align{
+    display: flex;
+    align-items: center;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.inner-content{
+    width: 100%;
+    max-width: $desktop;
+    display: flex;
+    margin: auto;
+}
+
+.flex-left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.wp-block-file{
+    a{
+        font-weight: bold;
+    }
+}

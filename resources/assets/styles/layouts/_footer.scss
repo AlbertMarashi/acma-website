@@ -1,5 +1,5 @@
-footer{
-
+.footer-header{
+    font-size: 2em;
 }
 
 .final-footer{
@@ -25,16 +25,6 @@ footer{
     background: #ddd;
     padding: 40px;
     color: #222;
-}
-
-.sponsers-footer{
-    background: #222;
-    font-weight: bolder;
-    padding: 20px;
-    color: #fff;
-    @media (min-width: $tablet) {
-        padding: 40px 80px;
-    }
 }
 
 .seperators{
@@ -81,11 +71,11 @@ footer{
     flex-direction: column;
     margin: 10px;
     .sponsor-title{
-        font-size: 1.3em;
+        font-size: 1.5em;
         display: flex;
         justify-content: center;
-        background: #555;
-        padding: 8px;
+        background: darken($secondarytheme, 15%);
+        padding: 6px;
     }
     .sponsor-container{
         color: #222;
@@ -95,6 +85,7 @@ footer{
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        flex: 1 0 auto;
         img{
             padding: 10px;
             max-height: 100px;
@@ -103,7 +94,7 @@ footer{
     }
 }
 
-.contact{
+.contact-item{
     padding: 5px;
     display: flex;
     align-items: center;
@@ -118,5 +109,6 @@ footer{
         color: #222;
         padding-left: 10px;
         font-size: 1.3em;
+        font-weight: bold;
     }
 }

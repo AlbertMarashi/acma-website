@@ -1,7 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-  @while(have_posts()) @php the_post() @endphp
-    @include('partials.content-single-'.get_post_type())
-  @endwhile
+
+@php the_post() @endphp
+
+<div class="hero">
+  <div class="inner-hero image padding-medium-large center column" style="background-image: url({{ get_the_post_thumbnail_url() }})">
+    <h1 class="title shadow">{{ get_the_title() }}</h1>
+  </div>
+  <div class="inner-hero page">
+    {{ the_content() }}
+</div>
+  
 @endsection

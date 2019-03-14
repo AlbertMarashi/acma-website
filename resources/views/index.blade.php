@@ -14,11 +14,25 @@
   <div class="inner-hero flex column center">
     <h2 class="front-page-h2">Book Your Event</h2>
     @php
-      $the_query = new WP_Query(['tag' => 'event', 'posts_per_page'=> 3 ]);
+      $the_query = new WP_Query([
+        'tag' => 'event',
+        'posts_per_page'=> 3,
+        'meta_key' => 'date-start',
+        'order' => 'ASC',
+        'orderby' => 'meta_value',
+        'meta_query' => [
+          [
+            'key' => 'date-start',
+            'type' => 'DATETIME',
+            'value' => date('Y-m-d H:i:s'),
+            'compare' => '>='
+          ],
+        ]
+      ]);
     @endphp
 
     @if( $the_query->have_posts() )
-    <div class="events flex">
+    <div class="events-container flex">
       @while($the_query->have_posts())
           {{ $the_query->the_post() }}
           <div class="event-box">
@@ -55,7 +69,7 @@
     @endphp
 
     @if( $the_query->have_posts() )
-    <div class="events flex">
+    <div class="events-container flex">
       @while($the_query->have_posts())
           {{ $the_query->the_post() }}
           <div class="event-box">

@@ -34,6 +34,9 @@ header {
     img{
       max-height: 60px;
     }
+    @media (max-width: $phone) {
+      font-size: 1.5em;
+    }
   }
   a{
     color: white;
@@ -42,6 +45,17 @@ header {
 
 .primary-nav {
   background: #7E0707;
+  #menu-primary {
+    @media (max-width: $laptop) {
+      z-index: 9;
+      position: absolute;
+      display: none;
+      top: 47px;
+      right: 0px;
+      background: rgb(94, 5, 5);
+      flex-direction: column;
+    }
+  }
   ul{
     list-style: none;
     margin: 0;
@@ -54,16 +68,42 @@ header {
       padding: 12px 25px;
       display: block;
     }
+    @media (max-width: $laptop) {
+      a{
+        padding: 14px 45px;
+        border-bottom: 1px solid rgb(65, 4, 4);
+      }
+      &.menu-item-has-children{
+        > a{
+          background: desaturate(#7E0707, 20%)
+        }
+        .sub-menu{
+          a{
+            padding-left: 10px;
+          }
+        }
+      }
+    }
   }
   .sub-menu{
-    display: none
+    display: none;
+    position: absolute;
+    background: darken(#7E0707, 5%);
+    flex-direction: column;
+    @media (max-width: $laptop) {
+      display: flex;
+      position: relative;
+    }
+  }
+  .menu-item-has-children > a:after {
+    color: #fff;
+    content: '▾';
   }
 }
 
 .secondary-nav {
   background:#0B253B;
   .menu-secondary-nav-container{
-    display: flex;
     width: 100%;
   }
   ul{
@@ -116,11 +156,12 @@ header {
   }
   @media (max-width: $tablet) {
     .menu-secondary-nav-container{
-      display: none;
       position: absolute;
+      z-index: 8;
       ul{
+        display: none;
         flex-direction: column;
-        background: rgb(7, 24, 37)
+        background: rgb(7, 24, 37);
       }
     }
     .secondary-nav-drop{
@@ -155,9 +196,6 @@ header {
   align-items: center;
 }
 
-.menu-primary-container{
-  display: flex;
-  @media (max-width: $laptop) {
-    display: none;
-  }
+.menu-primary-container {
+  position: relative;
 }

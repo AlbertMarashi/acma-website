@@ -25,28 +25,28 @@
     </div>
   </div>
   
-  <div class="sponsers-footer">
+  <div class="hero image padding-small" style="background-image: url({{ get_field('banner-image', 'options') }})">
     <div class="inner-content column">
       <div class="flex">
+          @if(have_rows('corporate-sponsor', 'options'))
+          <div class="sponsor-box">
+            <div class="sponsor-title">Corporate Sponsors</div>
+            <div class="sponsor-container">
+                @while (have_rows('corporate-sponsor', 'options') && the_row())
+                  <a href="{{ the_sub_field('website-link') }}">
+                    <img src="{!! the_sub_field('image') !!}">
+                  </a>
+                @endwhile
+            </div>
+          </div>
+          @endif
+      </div>
+      <div class="flex mobile">
+        @if(have_rows('major-sponsor', 'options'))
         <div class="sponsor-box">
           <div class="sponsor-title">Major Sponsors</div>
           <div class="sponsor-container">
-            @if(have_rows('major-sponsor', 'options'))
               @while (have_rows('major-sponsor', 'options') && the_row())
-                <a href="{{ the_sub_field('website-link') }}">
-                  <img src="{!! the_sub_field('image') !!}">
-                </a>
-              @endwhile
-            @endif
-          </div>
-        </div>
-      </div>
-      <div class="flex mobile">
-        @if(have_rows('corporate-sponsor', 'options'))
-        <div class="sponsor-box">
-          <div class="sponsor-title">Corporate Sponsors</div>
-          <div class="sponsor-container">
-              @while (have_rows('corporate-sponsor', 'options') && the_row())
                 <a href="{{ the_sub_field('website-link') }}">
                   <img src="{!! the_sub_field('image') !!}">
                 </a>
@@ -54,7 +54,6 @@
           </div>
         </div>
         @endif
-        
         @if(have_rows('strategic-partner', 'options'))
         <div class="sponsor-box">
           <div class="sponsor-title">Strategic Partners</div>
@@ -72,18 +71,18 @@
   </div>
   <div class="grey-footer">
     <div class="inner-content column text-center">
-        <h2>Contact Us</h2>
+        <h2 class="footer-header">Contact Us</h2>
         <div class='flex column center'>
           <div class="flex-left">
-            <span class="contact">
+            <span class="contact-item">
               <i class="material-icons wrapping">person</i>
               <div class="contact-text">{{ get_field('contact-name', 'options') }}</div>
             </span>
-            <span class="contact">
+            <span class="contact-item">
                 <i class="material-icons wrapping">email</i>
                 <a class="contact-text" href="tel:{{ get_field('contact-number', 'options') }}">{{ get_field('contact-number', 'options') }}</a>
             </span>
-            <span class="contact">
+            <span class="contact-item">
               <i class="material-icons wrapping">phone</i>
               <a class="contact-text" href="mailto:{{ get_field('contact-email', 'options') }}">{{ get_field('contact-email', 'options') }}</a>
             </span>

@@ -31,10 +31,17 @@ html{
             padding: 40px;
             background: white;
             box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
-            font-size: 1.1em;
+            font-size: 1.2em;
             @media (max-width: $tablet) {
                 padding: 20px;
             }
+            &.max{
+                margin: 0;
+                max-width: none;
+            }
+        }
+        &.page-text{
+            font-size: 1.2em;
         }
         &.padding-none{
             padding: 10px;
@@ -47,6 +54,9 @@ html{
         }
         &.padding-medium{
             padding: 10vh 10px;
+        }
+        &.padding-medium-large{
+            padding: 16vh 10px;
         }
         &.padding-large{
             padding: 25vh 10px;
@@ -63,6 +73,9 @@ html{
     }
     &.padding-medium{
         padding: 10vh 10px;
+    }
+    &.padding-medium-large{
+        padding: 16vh 10px;
     }
     &.padding-large{
         padding: 25vh 10px;

@@ -1,12 +1,55 @@
 <header>
-    <div id="clickexit" class="clickexit" onClick="toggle_visibility('menu')"></div>
     <script>
-        function toggleMenu(id){
-            //get element
-            //toggle class
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            
+            if(e){
+                if (e.style.display == 'flex') {
+                    e.style.display = 'none';
+                }
+                else {
+                    e.style.display = 'flex';
+                }
+            }
         }
 
-        //check 
+        if (matchMedia) {
+            var mq = window.matchMedia("(min-width: 1000px)");
+            mq.addListener(WidthChange('menu-primary'));
+            WidthChange(mq);
+
+            var mq1 = window.matchMedia("(min-width: 800px)");
+            mq1.addListener(WidthChange('menu-secondary'));
+            WidthChange(mq1);
+        }
+
+        function WidthChange(name) {
+            return function(mq){
+                if (mq.matches) {
+                    try {
+                        var e = document.getElementById(name);
+                        e.removeAttribute("style");
+                    } catch (err) {
+                        console.log("Could not delete Style Attribute");
+                    }
+                }
+            }
+        }
+
+        jQuery(function() {
+            jQuery('.menu-item-has-children a').click(function() {
+                let sibling = jQuery(this).siblings('.sub-menu')[0]
+                if(sibling){
+                    if (sibling.style.display == 'flex') {
+                        sibling.style.display = 'none';
+                    }
+                    else {
+                        sibling.style.display = 'flex';
+                    }
+                }
+            });
+        });
+
     </script>
     <div class="search-panel">
         {!! get_search_form(false) !!}
@@ -16,8 +59,8 @@
             <div class="inner-menu row">
                 <a class="brand" href="{{ home_url('/') }}">
                 @php
-					$custom_logo_id = get_theme_mod( 'custom_logo' );
-					$custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' );
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' );
                 @endphp
                     <img src="{!! esc_url( $custom_logo_url ) !!}" class="logo"/>
                     {{ get_bloginfo('name', 'display') }}
@@ -38,18 +81,18 @@
             <div class="inner-menu">
                 <span class="chinese-text">澳大利亚华人医学会</span>
                 <div class="flex end">
+                    <div class="menu-icon">
+                        <a href="#" onclick="toggle_visibility('menu-primary')"><i class="material-icons">menu</i></a>
+                    </div>
                     @if (has_nav_menu('primary-nav'))
                         {!! wp_nav_menu(['theme_location' => 'primary-nav', 'menu_class' => 'nav']) !!}
                     @endif
-                    <div class="menu-icon">
-                        <a href="#"><i class="material-icons">menu</i></a>
-                    </div>
                 </div>
             </div>
         </nav>
         <nav class="secondary-nav">
             <div class="inner-menu">
-                <a href="#" class="secondary-nav-drop">
+                <a href="#" onclick="toggle_visibility('menu-secondary-nav')" class="secondary-nav-drop">
                     <i class="material-icons">
                         keyboard_arrow_down
                     </i>

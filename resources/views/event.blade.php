@@ -10,7 +10,7 @@
 
 <div class="hero">
   <div class="inner-hero image padding-medium center column" style="background-image: url({{ get_the_post_thumbnail_url() }})">
-    <h1 class="title shadow">{{ get_the_title() }}</h1>
+    <h1 class="title shadow">{!! get_the_title() !!}</h1>
     @if(get_field('date-start'))
       <div class="time shadow">
         <div class="time-length">
@@ -59,7 +59,15 @@
 
         </script>
     @endif
-    <a class="button featured bright" href="{{ get_field('book-link') }}">BOOK NOW</a>
+    @php
+        $date = new DateTime();
+        $unixdate = $date->format('U').'000' + 0;
+        $eventdate = DateTime::createFromFormat("d\/m\/Y H:i a", get_field("date-start"))->format('U').'000' + 0;
+    @endphp
+    
+    @if(get_field('book-link') && $eventdate >= $unixdate)
+      <a class="button featured bright" href="{{ get_field('book-link') }}">BOOK NOW</a>
+    @endif
   </div>
   <div class="inner-hero page">
     @if(get_field('date-start') || get_field('date-finish') || get_field('where'))

@@ -3,7 +3,7 @@
 @section('content')
 <div class="hero image padding-medium" style="background-image: url({{ get_field('featured-image', 'options') }})">
   <div class="inner-hero">
-    <h1 class="title shadow">{{ get_field('featured-title', 'options') }}</h1>
+    <h1 class="title shadow">{!! get_field('featured-title', 'options') !!}</h1>
     <div class="featured-text shadow">
       {{ get_field('featured-text', 'options') }}
     </div>
@@ -37,7 +37,7 @@
           {{ $the_query->the_post() }}
           <div class="event-box">
             <div class="event-background" style="background-image: url({{ get_the_post_thumbnail_url() }})">
-              {{ get_the_title() }}
+              {!! get_the_title() !!}
             </div>
             <div class="buttons-event">
                 <a href="{{ get_permalink() }}" class="button flat secondary">ABOUT EVENT</a>
@@ -54,9 +54,9 @@
 </div>
 <div class="hero image padding-small" style="background-image: url({{ get_field('banner-image', 'options') }})">
   <div class="inner-hero">
-    <h2 class="title shadow">{{ get_field('banner-title', 'options') }}</h2>
+    <h2 class="title shadow">{!! get_field('banner-title', 'options') !!}</h2>
     <div class="featured-text shadow">
-      {{ get_field('banner-text', 'options') }}
+      {!! get_field('banner-text', 'options') !!}
     </div>
     <a class="button featured" href="{{ get_field('banner-button-link', 'options') }}">{{ get_field('banner-button-text', 'options') }}</a>
   </div>
@@ -74,7 +74,7 @@
           {{ $the_query->the_post() }}
           <div class="event-box">
             <div class="event-background" style="background-image: url({{ get_the_post_thumbnail_url() }})">
-              {{ get_the_title() }}
+              {!! get_the_title() !!}
             </div>
             <div class="excerpt">
               {{ the_excerpt() }}

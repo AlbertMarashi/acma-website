@@ -10,7 +10,7 @@
 
 <div class="hero image" style="background-image: url({{ get_the_post_thumbnail_url() }})">
   <div class="inner-hero page-text padding-medium center column text-center">
-    <h1 class="title shadow">{{ get_the_title() }}</h1>
+    <h1 class="title shadow">{!! get_the_title() !!}</h1>
     {{ the_content() }}
   </div>
 </div>
@@ -40,7 +40,7 @@
           {{ $the_query->the_post() }}
           <div class="event-box">
             <div class="event-background" style="background-image: url({{ get_the_post_thumbnail_url() }})">
-              {{ get_the_title() }}
+              {!! get_the_title() !!}
             </div>
             <div class="buttons-event">
                 <a href="{{ get_permalink() }}" class="button flat secondary">ABOUT EVENT</a>

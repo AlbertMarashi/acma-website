@@ -5,6 +5,8 @@
     border-radius: 5px;
     flex: 1 0 100%;
     max-width: 400px;
+    display: flex;
+    flex-direction: column;
     .event-background{
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
@@ -22,6 +24,7 @@
         text-shadow: 0 0 2px rgba(0,0,0,0.6), 0 0 10px rgba(0,0,0,0.6);
     }
     .buttons-event{
+        margin-top: auto;
         display: flex;
         justify-content: center;
         padding: 10px 0;

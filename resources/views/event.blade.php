@@ -66,7 +66,7 @@
     @endphp
     
     @if(get_field('book-link') && $eventdate >= $unixdate)
-      <a class="button featured bright" href="{{ get_field('book-link') }}">BOOK NOW</a>
+      <a class="button featured bright box-shadow" href="{{ get_field('book-link') }}">BOOK NOW</a>
     @endif
   </div>
   <div class="inner-hero page">

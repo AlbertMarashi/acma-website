@@ -23,6 +23,8 @@
     }
     &.bright{
         background: desaturate($maintheme, 20%);
+    }
+    &.box-shadow{
         box-shadow: 0 0 8px 2px rgba(0,0,0,0.5);
     }
     &.flat{

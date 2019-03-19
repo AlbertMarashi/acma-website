@@ -70,7 +70,7 @@
     @endif
   </div>
   <div class="inner-hero page">
-    @if(get_field('date-start') || get_field('date-finish') || get_field('where'))
+    @if(get_field('book-link') || get_field('date-start') || get_field('date-finish') || get_field('where'))
       @if(get_field('date-start'))
         <p><strong>When: </strong>{{ get_field('date-start') }}</p>
       @endif
@@ -79,6 +79,9 @@
       @endif
       @if(get_field('where'))
         <p><strong>Where: </strong>{{ get_field('where') }}</p>
+      @endif
+      @if(get_field('book-link') && $eventdate >= $unixdate)
+        <a class="button featured bright" href="{{ get_field('book-link') }}">BOOK EVENT NOW</a>
       @endif
       <hr>
     @endif

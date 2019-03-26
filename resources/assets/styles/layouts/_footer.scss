@@ -25,6 +25,9 @@
     background: #ddd;
     padding: 40px;
     color: #222;
+    @media (max-width: $tablet) {
+        padding: 40px 20px;
+    }
 }
 
 .seperators{
@@ -110,5 +113,10 @@
         padding-left: 10px;
         font-size: 1.3em;
         font-weight: bold;
+        text-align: left;
     }
+}
+
+.sponsor-box  .sponsor-container .large-image{
+    max-height: 120px;
 }

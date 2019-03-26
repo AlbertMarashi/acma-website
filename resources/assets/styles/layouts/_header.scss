@@ -183,6 +183,10 @@ header {
   max-width: $desktop;
   display: flex;
   margin: auto;
+  padding: 0 40px;
+  @media (max-width: $tablet) {
+    padding: 0
+  }
 }
 
 .search-panel{

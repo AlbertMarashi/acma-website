@@ -83,7 +83,7 @@
       @if(get_field('book-link') && $eventdate >= $unixdate)
         <a class="button featured bright" href="{{ get_field('book-link') }}">BOOK EVENT NOW</a>
       @endif
-      <hr>
+      <br>
     @endif
     {{ the_content() }}
 </div>

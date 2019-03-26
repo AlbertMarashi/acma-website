@@ -34,7 +34,7 @@
             <div class="sponsor-container">
                 @while (have_rows('corporate-sponsor', 'options') && the_row())
                   <a href="{{ the_sub_field('website-link') }}">
-                    <img src="{!! the_sub_field('image') !!}">
+                    <img class="large-image" src="{!! the_sub_field('image') !!}">
                   </a>
                 @endwhile
             </div>
@@ -60,7 +60,7 @@
           <div class="sponsor-container">
               @while (have_rows('strategic-partner', 'options') && the_row())
                 <a href="{{ the_sub_field('website-link') }}">
-                  <img src="{!! the_sub_field('image') !!}">
+                  <img  class="large-image" src="{!! the_sub_field('image') !!}">
                 </a>
               @endwhile
           </div>
@@ -70,7 +70,7 @@
     </div>
   </div>
   <div class="grey-footer">
-    <div class="inner-content column text-center">
+    <div class="inner-content column text-center card">
         <h2 class="footer-header">Contact Us</h2>
         <div class='flex column center'>
           <div class="flex-left">

@@ -10,28 +10,28 @@
     <a class="button featured" href="{{ get_field('featured-button-link', 'options') }}">{{ get_field('featured-button-text', 'options') }}</a>
   </div>
 </div>
+@php
+  $the_query = new WP_Query([
+    'tag' => 'event',
+    'posts_per_page'=> 3,
+    'meta_key' => 'date-start',
+    'order' => 'ASC',
+    'orderby' => 'meta_value',
+    'meta_query' => [
+      [
+        'key' => 'date-start',
+        'type' => 'DATETIME',
+        'value' => date('Y-m-d H:i:s'),
+        'compare' => '>='
+      ],
+    ]
+  ]);
+@endphp
+@if( $the_query->have_posts() )
 <div class="hero padding-small">
   <div class="inner-hero flex column center">
     <h2 class="front-page-h2">Book Your Event</h2>
-    @php
-      $the_query = new WP_Query([
-        'tag' => 'event',
-        'posts_per_page'=> 3,
-        'meta_key' => 'date-start',
-        'order' => 'ASC',
-        'orderby' => 'meta_value',
-        'meta_query' => [
-          [
-            'key' => 'date-start',
-            'type' => 'DATETIME',
-            'value' => date('Y-m-d H:i:s'),
-            'compare' => '>='
-          ],
-        ]
-      ]);
-    @endphp
 
-    @if( $the_query->have_posts() )
     <div class="events-container flex">
       @while($the_query->have_posts())
           {{ $the_query->the_post() }}
@@ -46,12 +46,12 @@
           </div>
       @endwhile
     </div>
-    @endif
     @php
       wp_reset_postdata();
     @endphp
   </div>
 </div>
+@endif
 <div class="hero image padding-small" style="background-image: url({{ get_field('banner-image', 'options') }})">
   <div class="inner-hero">
     <h2 class="title shadow">{!! get_field('banner-title', 'options') !!}</h2>

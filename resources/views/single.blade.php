@@ -9,7 +9,10 @@
     <h1 class="title shadow">{!! get_the_title() !!}</h1>
   </div>
   <div class="inner-hero page">
-    {{ the_content() }}
+    <div class="inner-page">
+        {{ the_content() }}
+    </div>
+  </div>
 </div>
   
 @endsection

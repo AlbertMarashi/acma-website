@@ -5,11 +5,11 @@ html{
 .hero{
     background: transparent;
     &.dark{
-        background: #222;
+        background: #07111d;
         color: white;
     }
     &.image{
-        background: #333;
+        background: #07111d;
         color: white;
         background-position: center;
         background-repeat: no-repeat;
@@ -20,7 +20,7 @@ html{
         max-width: $desktop;
         width: 100%;
         &.image{
-            background: #333;
+            background: #07111d;
             color: white;
             background-position: center;
             background-repeat: no-repeat;
@@ -32,6 +32,7 @@ html{
             background: white;
             box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
             font-size: 1.2em;
+            font-family: 'Source Sans Pro';
             @media (max-width: $tablet) {
                 padding: 20px;
             }
@@ -39,81 +40,17 @@ html{
                 margin: 0;
                 max-width: none;
             }
+            .inner-page{
+                max-width: 1000px;
+                margin: auto;
+                width: 100%;
+            }
+            h2{
+                color: rgb(168, 12, 12);
+            }
         }
         &.page-text{
             font-size: 1.2em;
-        }
-        &.padding-none{
-            padding: 10px 30px;
-            @media (max-width: $tablet) {
-                padding: 10px;
-            }
-        }
-        &.padding-tiny{
-            padding: 20px 30px;
-            @media (max-width: $tablet) {
-                padding: 20px;
-            }
-        }
-        &.padding-small{
-            padding: 5vh 40px;
-            @media (max-width: $tablet) {
-                padding: 5vh 10px;
-            }
-        }
-        &.padding-medium{
-            padding: 10vh 40px;
-            @media (max-width: $tablet) {
-                padding: 10vh 10px;
-            }
-        }
-        &.padding-medium-large{
-            padding: 16vh 40px;
-            @media (max-width: $tablet) {
-                padding: 16vh 10px;
-            }
-        }
-        &.padding-large{
-            padding: 25vh 10px;
-            @media (max-width: $tablet) {
-                padding: 16vh 40px;
-            }
-        }
-    }
-    &.padding-none{
-        padding: 10px 40px;
-        @media (max-width: $tablet) {
-            padding: 10px;
-        }
-    }
-    &.padding-tiny{
-        padding: 20px 40px;
-        @media (max-width: $tablet) {
-            padding: 20px;
-        }
-    }
-    &.padding-small{
-        padding: 5vh 50px;
-        @media (max-width: $tablet) {
-            padding: 5vh 10px;
-        }
-    }
-    &.padding-medium{
-        padding: 10vh 50px;
-        @media (max-width: $tablet) {
-            padding: 10vh 10px;
-        }
-    }
-    &.padding-medium-large{
-        padding: 16vh 50px;
-        @media (max-width: $tablet) {
-            padding: 16vh 10px;
-        }
-    }
-    &.padding-large{
-        padding: 25vh 40px;
-        @media (max-width: $tablet) {
-            padding: 16vh 10px;
         }
     }
 }
@@ -139,3 +76,39 @@ html{
     color: #a11;
 }
 
+.padding-none{
+    padding: 10px 30px;
+    @media (max-width: $tablet) {
+        padding: 10px;
+    }
+}
+.padding-tiny{
+    padding: 20px 30px;
+    @media (max-width: $tablet) {
+        padding: 20px;
+    }
+}
+.padding-small{
+    padding: 5vh 40px;
+    @media (max-width: $tablet) {
+        padding: 5vh 10px;
+    }
+}
+.padding-medium{
+    padding: 10vh 40px;
+    @media (max-width: $tablet) {
+        padding: 10vh 10px;
+    }
+}
+.padding-medium-large{
+    padding: 16vh 40px;
+    @media (max-width: $tablet) {
+        padding: 16vh 10px;
+    }
+}
+.padding-large{
+    padding: 25vh 10px;
+    @media (max-width: $tablet) {
+        padding: 16vh 40px;
+    }
+}

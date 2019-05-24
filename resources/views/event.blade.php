@@ -70,26 +70,27 @@
     @endif
   </div>
   <div class="inner-hero page">
-    @if(get_field('book-link') || get_field('date-start') || get_field('date-finish') || get_field('where'))
-      @if(get_field('date-start'))
-        <p><strong>When: </strong>{{ get_field('date-start') }}</p>
+    <div class="inner-page">
+      @if(get_field('book-link') || get_field('date-start') || get_field('date-finish') || get_field('where'))
+        @if(get_field('date-start'))
+          <p><strong>When: </strong>{{ get_field('date-start') }}</p>
+        @endif
+        @if(get_field('date-finish'))
+          <p><strong>Until: </strong>{{ get_field('date-finish') }}</p>
+        @endif
+        @if(get_field('where'))
+          <p><strong>Where: </strong>{{ get_field('where') }}</p>
+        @endif
+        @if(get_field('book-link') && $eventdate >= $unixdate)
+          <a class="button featured bright small-button-text" href="{{ get_field('book-link') }}">BOOK NOW</a>
+        @endif
       @endif
-      @if(get_field('date-finish'))
-        <p><strong>Until: </strong>{{ get_field('date-finish') }}</p>
-      @endif
-      @if(get_field('where'))
-        <p><strong>Where: </strong>{{ get_field('where') }}</p>
-      @endif
+      {{ the_content() }}
       @if(get_field('book-link') && $eventdate >= $unixdate)
         <a class="button featured bright small-button-text" href="{{ get_field('book-link') }}">BOOK NOW</a>
       @endif
-      <br>
-    @endif
-    {{ the_content() }}
-    @if(get_field('book-link') && $eventdate >= $unixdate)
-      <a class="button featured bright small-button-text" href="{{ get_field('book-link') }}">BOOK NOW</a>
-    @endif
+    </div>
   </div>
 </div>
-  
+
 @endsection

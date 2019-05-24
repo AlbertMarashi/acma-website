@@ -25,9 +25,9 @@
     @while($the_query->have_posts())
         {{ $the_query->the_post() }}
         <div class="event-box">
-          <div class="event-background" style="background-image: url({{ get_the_post_thumbnail_url() }})">
+          <a href="{{ get_permalink() }}"  class="event-background" style="background-image: url({{ get_the_post_thumbnail_url() }})">
             {!! get_the_title() !!}
-          </div>
+          </a>
           <div class="excerpt">
             {{ the_excerpt() }}
           </div>

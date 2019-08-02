@@ -9,9 +9,9 @@
 @php the_post() @endphp
 
 <div class="hero">
-  <div class="inner-hero image padding-medium-large center column" style="background-image: url({{ get_the_post_thumbnail_url() }})">
+  <div class="inner-hero image padding-small center column" style="background-image: url({{ get_the_post_thumbnail_url() }})">
     <h1 class="title shadow">{!! get_the_title() !!}</h1>
-    @if(get_field('date-start') && false)
+    @if(get_field('date-start'))
       <div class="time shadow">
         <div class="time-length">
             <div class="time-date" id="days"></div>

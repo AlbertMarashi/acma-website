@@ -29,7 +29,7 @@
             {!! get_the_title() !!}
           </a>
           <div class="excerpt">
-            {{ the_excerpt() }}
+              {!! wp_trim_words(wp_strip_all_tags(get_the_content()), 25) !!}
           </div>
           <div class="buttons-event">
               <a href="{{ get_permalink() }}" class="button flat secondary">READ MORE</a>

@@ -49,6 +49,8 @@
           </div>
       @endwhile
     </div>
+    @else
+      <h2>Sorry, there is no upcoming events</h2>
     @endif
     @php
       wp_reset_postdata();

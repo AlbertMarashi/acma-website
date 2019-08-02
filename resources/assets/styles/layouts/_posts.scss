@@ -10,14 +10,15 @@
     .event-background{
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-        padding: 70px 10px;
-        background: rgb(4, 19, 39);
+        padding: 10px;
+        background: rgb(5, 26, 53);
         color: white;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
-        flex: 1 0 auto;
+        height: 200px;
+        text-align: center;
         align-items: center;
         justify-content: center;
         font-weight: 600;
@@ -33,6 +34,11 @@
     .excerpt{
         padding: 15px;
         flex: 1 0 auto;
+        padding-bottom: 0;
+        font-size: 17px;
+        p {
+            margin: 0;
+        }
     }
 }
 
@@ -70,6 +76,9 @@
     padding: 20px;
     box-shadow: 0 0 6px 0 rgba(0,0,0,0.2);
     border-radius: 4px;
+    &.card-radius {
+        border-radius: 20px;
+    }
 }
 
 .sponsor-image{
@@ -79,4 +88,10 @@
 
 .sponsor-link{
     margin: 15px;
+}
+
+.splitter-small{
+    max-width: 400px;
+    border: 0;
+    border-bottom: 4px solid rgba(0,0,0,0.1);
 }

@@ -24,7 +24,29 @@
       </div>
     </div>
   </div>
-  
+  <div class="grey-footer">
+    <div class="inner-content column text-center card card-radius">
+        <h2 class="footer-header">Contact Us</h2>
+        <div class='flex column center'>
+          <div class="flex-left">
+            <span class="contact-item">
+              <i class="material-icons wrapping">person</i>
+              <div class="contact-text">{{ get_field('contact-name', 'options') }}</div>
+            </span>
+            <span class="contact-item">
+                <i class="material-icons wrapping">email</i>
+                <a class="contact-text" href="tel:{{ get_field('contact-number', 'options') }}">{{ get_field('contact-number', 'options') }}</a>
+            </span>
+            <span class="contact-item">
+              <i class="material-icons wrapping">phone</i>
+              <a class="contact-text" href="mailto:{{ get_field('contact-email', 'options') }}">{{ get_field('contact-email', 'options') }}</a>
+            </span>
+            
+          </div>
+          <p style="text-align: left; font-size: 1.2em;">{!! get_field('company-text', 'options') !!}</p>
+        </div>
+    </div>
+  </div>
   <div class="hero image padding-small" style="background-image: url({{ get_field('banner-image', 'options') }})">
     <div class="inner-content column">
       <div class="flex">
@@ -67,29 +89,6 @@
         </div>
         @endif
       </div>
-    </div>
-  </div>
-  <div class="grey-footer">
-    <div class="inner-content column text-center card">
-        <h2 class="footer-header">Contact Us</h2>
-        <div class='flex column center'>
-          <div class="flex-left">
-            <span class="contact-item">
-              <i class="material-icons wrapping">person</i>
-              <div class="contact-text">{{ get_field('contact-name', 'options') }}</div>
-            </span>
-            <span class="contact-item">
-                <i class="material-icons wrapping">email</i>
-                <a class="contact-text" href="tel:{{ get_field('contact-number', 'options') }}">{{ get_field('contact-number', 'options') }}</a>
-            </span>
-            <span class="contact-item">
-              <i class="material-icons wrapping">phone</i>
-              <a class="contact-text" href="mailto:{{ get_field('contact-email', 'options') }}">{{ get_field('contact-email', 'options') }}</a>
-            </span>
-            
-          </div>
-          <p style="text-align: left; font-size: 1.2em;">{!! get_field('company-text', 'options') !!}</p>
-        </div>
     </div>
   </div>
   <div class="final-footer">

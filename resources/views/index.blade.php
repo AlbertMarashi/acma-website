@@ -11,6 +11,7 @@
   </div>
 </div>
 @php
+
   $the_query = new WP_Query([
     'tag' => 'event',
     'posts_per_page'=> 3,
@@ -21,7 +22,7 @@
       [
         'key' => 'date-start',
         'type' => 'DATETIME',
-        'value' => date('Y-m-d H:i:s'),
+        'value' => date('Y-m-d H:i:s', time() - 3600 * 2),
         'compare' => '>='
       ],
     ]
@@ -41,7 +42,7 @@
             </a>
             <div class="buttons-event">
                 <a href="{{ get_permalink() }}" class="button flat secondary">ABOUT EVENT</a>
-                <a href="{{ get_field('book-link') }}" class="button secondary">BOOK NOW</a>
+                <a href="{{ get_field('book-link') ? get_field('book-link') : get_permalink() }}" class="button secondary">BOOK NOW</a>
             </div>
           </div>
       @endwhile
@@ -77,7 +78,7 @@
               {!! get_the_title() !!}
             </div>
             <div class="excerpt">
-              {{ the_excerpt() }}
+              {!! wp_trim_words(wp_strip_all_tags(get_the_content()), 25) !!}
             </div>
             <div class="buttons-event">
                 <a href="{{ get_permalink() }}" class="button flat secondary">READ MORE</a>

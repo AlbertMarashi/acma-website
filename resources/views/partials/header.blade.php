@@ -67,7 +67,7 @@
                 </a>
                 <div class="flex end" style="align-self: stretch;">
                     <div class="flex-align">
-                        <a href="/join-us" class="button secondary">Join Us</a>
+                        <a href="{{ get_field('featured-button-link', 'options') }}" class="button secondary">{{ get_field('featured-button-text', 'options') }}</a>
                         <!--
                         <a href="#" class="button secondary search">
                             <svg style="width:28.5px;height:28.5px" viewBox="0 0 24 24">
